@@ -52,3 +52,8 @@ app.delete('/todos/:id', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+if (!task || task.trim() === "") {
+    return res.status(400).send('Task cannot be empty');
+  }
+  
